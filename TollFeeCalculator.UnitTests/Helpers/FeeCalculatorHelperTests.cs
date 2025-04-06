@@ -10,7 +10,7 @@ public class FeeCalculatorHelperTests
     {
         List<DateTime> dateTimes =
         [
-            DateTime.Parse("2024-03-04T05:00"), // A Monday.
+            DateTime.Parse("2025-04-01T05:00"), // A Monday.
         ];
         Assert.Equal(0, FeeCalculatorHelper.GetTollFeeForPeriod(dateTimes));
     }
