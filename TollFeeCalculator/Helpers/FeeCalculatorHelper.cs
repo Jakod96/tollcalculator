@@ -18,8 +18,8 @@ public static class FeeCalculatorHelper
     
     private static List<FeeTime> GetFeeTimes()
     {
-        return new()
-        {
+        return
+        [
             new(TimeOnly.MinValue, 0),
             new(new TimeOnly(6, 0), 8),
             new(new TimeOnly(6, 30), 13),
@@ -31,21 +31,21 @@ public static class FeeCalculatorHelper
             new(new TimeOnly(17, 0), 13),
             new(new TimeOnly(18, 0), 8),
             new(new TimeOnly(18, 30), 0)
-        };
+        ];
 
     }
 
     private static HashSet<VehicleType> GetTollFreeVehicles()
     {
-        return new()
-        {
+        return
+        [
             VehicleType.Diplomat,
             VehicleType.Emergency,
             VehicleType.Foreign,
             VehicleType.Military,
             VehicleType.Motorbike,
-            VehicleType.Tractor,
-        };
+            VehicleType.Tractor
+        ];
     }
 
     private static decimal GetTollFeeForSingleEvent(DateTime dateTime)
