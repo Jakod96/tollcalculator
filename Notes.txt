@@ -1,6 +1,4 @@
 Thoughts:
-
-
 GetTollFee(VehicleType vehicleType, List<DateTime> dateTimes), could very well be better off having extra parameters with which could contain the MaxFeePerDay and the graceperiod since the calculation application should not be the owner of this information, it should just do the calculation.
 
 HolidayDates should of course not really exist like it does now, here we should have a database which stores the data and then move the fetching of it to a repository.
@@ -8,3 +6,9 @@ HolidayDates should of course not really exist like it does now, here we should 
 It might be a good move to move the fee into a class which contains atleast a currencycode, if in the future we would move to the euro or if we start supporting charging the tolls in a different value it would be nice to have it solved already.
 
 The feetimes should of course as the HolidayDates be moved to a database and be read from there.
+
+
+Some important concepts (as requested):
+Added testing
+Broke out code from being tightly coupled to the main TollCalculator to helpers, in reality these would be services with interfaces to have better reuseability.
+Use of proper datatypes as enums instead of comparisons to strings
