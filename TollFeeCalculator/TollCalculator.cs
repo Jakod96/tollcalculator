@@ -38,7 +38,7 @@ public class TollCalculator
     }
 
     // Partitions toll events into groups, resulting in one group per period, as defined by `FeeGracePeriod`.
-    private IEnumerable<List<DateTime>> PartitionTollEvents(IEnumerable<DateTime> dateTimes)
+    private static IEnumerable<List<DateTime>> PartitionTollEvents(IEnumerable<DateTime> dateTimes)
     {
         var currentPeriod = new List<DateTime>();
 
@@ -62,7 +62,7 @@ public class TollCalculator
         yield return currentPeriod;
     }
 
-    private bool AllDateTimesOnTheSameDay(List<DateTime> dateTimes)
+    private static bool AllDateTimesOnTheSameDay(List<DateTime> dateTimes)
     {
         var day = dateTimes.FirstOrDefault().Date;
         return dateTimes.All(d => d.Date == day);
