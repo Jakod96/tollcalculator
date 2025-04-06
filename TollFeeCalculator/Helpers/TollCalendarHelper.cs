@@ -29,7 +29,7 @@ public static class TollCalendarHelper
     // Hardcoding these dates is bad. Ideally you'd get these from a database or an external provider
     // IHolidayRepository.GetHolidays(int year); etc
     // These are based on https://kalender.se/helgdagar
-    private static readonly List<string> HolidayTimecodes =
+    private static readonly List<string> HolidayDates =
     [
         "2025-01-01",
         "2025-01-06",
@@ -48,6 +48,6 @@ public static class TollCalendarHelper
 
     private static HashSet<DateOnly> GetHolidays()
     {
-        return new(HolidayTimecodes.Select(DateOnly.Parse));
+        return new(HolidayDates.Select(DateOnly.Parse));
     } 
 }
