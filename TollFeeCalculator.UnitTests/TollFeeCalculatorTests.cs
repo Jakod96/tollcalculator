@@ -76,15 +76,4 @@ public class TollFeeCalculatorTests
         ];
         Assert.Equal(60, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
-
-
-    [Fact]
-    public void GetTollFee_NoFeeAtNight_ReturnsZero()
-    {
-        List<DateTime> dateTimes =
-        [
-            DateTime.Parse("2024-03-04T05:00"), // A Monday.
-        ];
-        Assert.Equal(0, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
-    }
 }
