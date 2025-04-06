@@ -1,4 +1,4 @@
-﻿namespace TollCalculator.UnitTests;
+﻿namespace TollFeeCalculator.UnitTests;
 
 public class UnitTest1
 {

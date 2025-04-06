@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tollcalculator", "TollCalculator\TollCalculator.csproj", "{A1A52D7B-E4CB-415E-9139-6204CF5CC3D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TollFeeCalculator", "TollFeeCalculator\TollFeeCalculator.csproj", "{A1A52D7B-E4CB-415E-9139-6204CF5CC3D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TollCalculator.UnitTests", "TollCalculator.UnitTests\TollCalculator.UnitTests.csproj", "{2F864F50-9B24-42AF-AEAA-D2AF6CB2F083}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TollFeeCalculator.UnitTests", "TollFeeCalculator.UnitTests\TollFeeCalculator.UnitTests.csproj", "{2F864F50-9B24-42AF-AEAA-D2AF6CB2F083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
