@@ -18,6 +18,11 @@ public class TollCalculator
     /// <exception cref="ArgumentOutOfRangeException">If <c>dateTimes</c> contains times from multiple days.</exception>
     public static decimal GetTollFee(VehicleType vehicleType, List<DateTime> dateTimes)
     {
+        if (dateTimes.Count == 0)
+        {
+            return 0;
+        }
+        
         if (!AllDateTimesOnTheSameDay(dateTimes))
         {
             throw new ArgumentOutOfRangeException(nameof(dateTimes));
@@ -28,7 +33,7 @@ public class TollCalculator
             return 0;
         }
 
-        if (dateTimes.Count == 0 || TollCalendarHelper.IsTollFreeDay(DateOnly.FromDateTime(dateTimes.First())))
+        if (TollCalendarHelper.IsTollFreeDay(DateOnly.FromDateTime(dateTimes.First())))
         {
             return 0;
         }
@@ -64,7 +69,7 @@ public class TollCalculator
 
     private static bool AllDateTimesOnTheSameDay(List<DateTime> dateTimes)
     {
-        var day = dateTimes.FirstOrDefault().Date;
+        var day = dateTimes.First().Date;
         return dateTimes.All(d => d.Date == day);
     }
 }
