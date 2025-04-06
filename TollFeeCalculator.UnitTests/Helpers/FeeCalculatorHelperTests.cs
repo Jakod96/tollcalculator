@@ -14,7 +14,7 @@ public class FeeCalculatorHelperTests
         ];
         Assert.Equal(0, FeeCalculatorHelper.GetTollFeeForPeriod(dateTimes));
     }
-    
+
     [Theory]
     [InlineData(VehicleType.Diplomat)]
     [InlineData(VehicleType.Emergency)]
@@ -26,7 +26,7 @@ public class FeeCalculatorHelperTests
     {
         Assert.True(FeeCalculatorHelper.IsTollFreeVehicle(vehicleType));
     }
-    
+
     [Theory]
     [InlineData(VehicleType.Car)]
     public void IsTollFreeVehicle_NotTollFreeVehicleType_ReturnsFalse(VehicleType vehicleType)

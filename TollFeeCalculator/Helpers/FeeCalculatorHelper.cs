@@ -10,12 +10,12 @@ public static class FeeCalculatorHelper
     {
         return GetTollFreeVehicles().Contains(vehicleType);
     }
-        
+
     public static decimal GetTollFeeForPeriod(IEnumerable<DateTime> dateTimes)
     {
         return dateTimes.Select(GetTollFeeForSingleEvent).Max();
     }
-    
+
     private static List<FeeTime> GetFeeTimes()
     {
         return

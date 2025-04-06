@@ -15,7 +15,7 @@ public static class TollCalendarHelper
         {
             return true;
         }
-        
+
         // June is toll-free.
         if (date.Month == 6)
         {
@@ -49,5 +49,5 @@ public static class TollCalendarHelper
     private static HashSet<DateOnly> GetHolidays()
     {
         return new(HolidayDates.Select(DateOnly.Parse));
-    } 
+    }
 }

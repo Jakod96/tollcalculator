@@ -8,7 +8,7 @@ public class TollCalculator
     //These values should of course be stored in a database or as appsettings depending on how the application is meant to be used.
     private static readonly TimeSpan FeeGracePeriod = TimeSpan.FromHours(1);
     private const int MaximumFeePerDay = 60;
-    
+
     /// <summary>
     /// Calculates the toll fee to pay for one day.
     /// </summary>
@@ -58,7 +58,7 @@ public class TollCalculator
                 currentPeriod = new() { time };
             }
         }
-        
+
         yield return currentPeriod;
     }
 
