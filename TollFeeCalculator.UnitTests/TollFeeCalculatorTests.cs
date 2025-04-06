@@ -10,7 +10,7 @@ public class TollFeeCalculatorTests
     public void GetTollFee_NoEvents_ReturnsZero()
     {
         List<DateTime> dateTimes = [];
-        Assert.Equal(0, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(0, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 
     [Fact]
@@ -18,7 +18,7 @@ public class TollFeeCalculatorTests
     {
         List<DateTime> dateTimes = [DateTime.Parse("2025-04-01T06:45")]; // A Monday - 13kr.
 
-        Assert.Equal(13, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(13, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 
     [Fact]
@@ -30,7 +30,7 @@ public class TollFeeCalculatorTests
             DateTime.Parse("2025-04-01T15:50")  // A Monday - 18kr
         ];
 
-        Assert.Equal(18, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(18, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public class TollFeeCalculatorTests
             DateTime.Parse("2025-04-01T14:45"), // A Monday - 8kr
             DateTime.Parse("2025-04-01T15:15")  // A Monday - 13kr
         ];
-        Assert.Equal(13, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(13, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 
     [Fact]
@@ -53,7 +53,7 @@ public class TollFeeCalculatorTests
             DateTime.Parse("2025-04-01T15:45"), // A Monday. - 18kr
             DateTime.Parse("2025-04-01T18:50"), // A monday - 0kr
         ];
-        Assert.Equal(31, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(31, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 
     [Fact]
@@ -74,6 +74,6 @@ public class TollFeeCalculatorTests
             DateTime.Parse("2025-04-01T16:55"),
             DateTime.Parse("2025-04-01T18:00")
         ];
-        Assert.Equal(60, _tollFeeCalculator.GetTollFee(VehicleType.Car, dateTimes));
+        Assert.Equal(60, TollCalculator.GetTollFee(VehicleType.Car, dateTimes));
     }
 }

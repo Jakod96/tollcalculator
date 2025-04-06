@@ -16,7 +16,7 @@ public class TollCalculator
     /// <param name="dateTimes">Times that the vehicle has crossed a toll point within one day.</param>
     /// <returns>The fee to be paid, in SEK.</returns>
     /// <exception cref="ArgumentOutOfRangeException">If <c>dateTimes</c> contains times from multiple days.</exception>
-    public decimal GetTollFee(VehicleType vehicleType, List<DateTime> dateTimes)
+    public static decimal GetTollFee(VehicleType vehicleType, List<DateTime> dateTimes)
     {
         if (!AllDateTimesOnTheSameDay(dateTimes))
         {
