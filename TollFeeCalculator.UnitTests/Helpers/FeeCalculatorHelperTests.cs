@@ -33,4 +33,23 @@ public class FeeCalculatorHelperTests
     {
         Assert.False(FeeCalculatorHelper.IsTollFreeVehicle(vehicleType));
     }
+    [Fact]
+    public void IsTollFreeDay_HolidayIsTollFreeDay_ReturnsTrue()
+    {
+        DateOnly date = new DateOnly(2025, 4, 18); // a Friday, but a holiday
+
+        var result = TollCalendarHelper.IsTollFreeDay(date);
+
+        Assert.True(result);
+    }
+    [Fact]
+    public void IsTollFreeDay_DayBeforeHolidayIsTollFreeDay_ReturnsTrue()
+    {
+        DateOnly date = new DateOnly(2025, 4, 18); //A Friday, but a holiday
+        date = date.AddDays(-1);
+
+        var result = TollCalendarHelper.IsTollFreeDay(date);
+
+        Assert.True(result);
+    }
 }
